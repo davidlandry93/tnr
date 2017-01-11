@@ -1,13 +1,22 @@
 
-include_directories(.)
+message(STATUS ${EXTERNAL_DIR})
 
-set(SOURCES anchor_point.cpp)
+set(SOURCES
+  anchor_point.cpp
+  pointcloud.cpp
+  pose.cpp
+  teach_and_repeat_map.cpp
+  )
 add_library(tnr ${SOURCES})
-target_link_libraries(tnr)
 
-set(PUBLIC_HEADERS anchor_point.h)
+set(PUBLIC_HEADERS
+  anchor_point.h
+  pointcloud.h
+  pose.h
+  quaternion.h
+  teach_and_repeat_map.h
+  vector3.h)
 
-INSTALL(FILES ${PUBLIC_HEADERS} DESTINATION ${INSTALL_INCLUDE_DIR})
 INSTALL(TARGETS tnr DESTINATION ${INSTALL_LIB_DIR} EXPORT tnr-targets)
 
 export(EXPORT tnr-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/tnr/tnr-targets.cmake)
