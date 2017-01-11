@@ -1,0 +1,8 @@
+
+set(TNR_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+if(NOT TARGET tnr AND NOT tnr_BINARY_DIR)
+  include("${CMAKE_CURRENT_LIST_DIR}/tnr-targets.cmake")
+endif()
+
+set(TNR_LIBRARIES tnr)
