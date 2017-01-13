@@ -1,4 +1,6 @@
 
+#include <iostream>
+
 #include "pose.h"
 
 namespace tnr {

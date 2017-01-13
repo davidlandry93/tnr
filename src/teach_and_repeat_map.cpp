@@ -13,6 +13,14 @@ namespace tnr {
         return anchor_points.size();
     }
 
+    std::vector<AnchorPoint>::const_iterator TeachAndRepeatMap::begin() const {
+        return anchor_points.begin();
+    }
+
+    std::vector<AnchorPoint>::const_iterator TeachAndRepeatMap::end() const {
+        return anchor_points.end();
+    }
+
     void TeachAndRepeatMap::from_csv(std::istream& is) {
         anchor_points.clear();
 
@@ -55,11 +63,11 @@ namespace tnr {
     }
 
     void TeachAndRepeatMap::from_json(const Json::Value& j) {
-        assert(j.isArray());
+        assert(j["anchors"].isArray());
         anchor_points.clear();
 
-        for(auto item : j["anchors"]) {
-            anchor_points.push_back(AnchorPoint::from_json(j));
+        for(Json::Value const& item : j["anchors"]) {
+            anchor_points.push_back(AnchorPoint::from_json(item));
         }
     }
 

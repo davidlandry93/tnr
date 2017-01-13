@@ -8,11 +8,11 @@
 namespace tnr {
     class PointCloud {
     public:
-        PointCloud(const std::string& name);
-        Json::Value to_json() const;
-
-    private:
         std::string name;
+
+        PointCloud(const std::string& name);
+        PointCloud(const PointCloud& pointcloud);
+        Json::Value to_json() const;
     };
 }
 

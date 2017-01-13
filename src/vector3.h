@@ -1,6 +1,8 @@
 #ifndef TNR_VECTOR_3_H
 #define TNR_VECTOR_3_H
 
+#include <iostream>
+
 #include <json/value.h>
 
 namespace tnr {

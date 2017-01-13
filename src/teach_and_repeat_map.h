@@ -13,6 +13,9 @@ namespace tnr {
     public:
         int n_anchor_points() const;
 
+        std::vector<AnchorPoint>::const_iterator begin() const;
+        std::vector<AnchorPoint>::const_iterator end() const;
+
         void from_json(const Json::Value& j);
         Json::Value to_json() const;
         void from_csv(std::istream& is);
