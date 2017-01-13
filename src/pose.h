@@ -13,6 +13,7 @@ namespace tnr {
         Quaternion orientation;
 
         Pose(const Vector3& position, const Quaternion& orientation);
+        Json::Value to_json() const;
         static Pose from_json(const Json::Value& j);
     };
 }

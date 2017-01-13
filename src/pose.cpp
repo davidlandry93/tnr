@@ -11,4 +11,12 @@ namespace tnr {
 
         return Pose(position, orientation);
     }
+
+    Json::Value Pose::to_json() const {
+        Json::Value j;
+        j["position"] = position.to_json();
+        j["orientation"] = orientation.to_json();
+
+        return j;
+    }
 }

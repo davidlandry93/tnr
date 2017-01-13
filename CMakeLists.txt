@@ -11,9 +11,11 @@ set(INSTALL_CMAKE_DIR lib/cmake/tnr)
 
 set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external)
 
-include_directories(src ${EXTERNAL_DIR}/jsoncpp/include)
+include_directories(src
+  ${EXTERNAL_DIR}/jsoncpp/include)
 
 add_subdirectory(${EXTERNAL_DIR}/jsoncpp)
+add_subdirectory(${EXTERNAL_DIR}/gflags)
 add_subdirectory(src)
 
 export(PACKAGE tnr)

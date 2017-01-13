@@ -12,6 +12,7 @@ namespace tnr {
         AnchorPoint(const PointCloud& pointcloud, const Pose& pose);
 
         static AnchorPoint from_json(const Json::Value& j);
+        Json::Value to_json() const;
     private:
         Pose position;
         PointCloud pointcloud;

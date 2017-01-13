@@ -5,9 +5,12 @@ set(SOURCES
   anchor_point.cpp
   pointcloud.cpp
   pose.cpp
-  teach_and_repeat_map.cpp
-  )
+  teach_and_repeat_map.cpp)
 add_library(tnr ${SOURCES})
+target_link_libraries(tnr jsoncpp)
+
+add_executable(tnr_csv2json csv2json.cpp)
+target_link_libraries(tnr_csv2json tnr gflags)
 
 set(PUBLIC_HEADERS
   anchor_point.h
