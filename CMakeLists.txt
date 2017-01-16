@@ -14,6 +14,11 @@ set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external)
 include_directories(src
   ${EXTERNAL_DIR}/jsoncpp/include)
 
+SET(BUILD_STATIC_LIBS ON)
+SET(JSONCPP_WITH_TESTS OFF)
+SET(JSONCPP_WITH_CMAKE_PACKAGE ON)
+
+
 add_subdirectory(${EXTERNAL_DIR}/jsoncpp)
 add_subdirectory(${EXTERNAL_DIR}/gflags)
 add_subdirectory(src)
@@ -26,6 +31,7 @@ foreach(p LIB INCLUDE CMAKE)
     set(${var} "${CMAKE_INSTALL_PREFIX}/${${var}}")
   endif()
 endforeach()
+
 
 file(RELATIVE_PATH REL_INCLUDE_DIR "${INSTALL_CMAKE_DIR}" "${INSTALL_INCLUDE_DIR}")
 set(CONF_INCLUDE_DIRS "\${TNR_CMAKE_DIR}/${REL_INCLUDE_DIR}")
