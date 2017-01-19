@@ -1,4 +1,7 @@
 
+include(CMakeFindDependencyMacro)
+find_dependency(jsoncpp)
+
 set(TNR_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
 
 if(NOT TARGET tnr AND NOT tnr_BINARY_DIR)

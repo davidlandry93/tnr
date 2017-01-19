@@ -9,17 +9,14 @@ set(INSTALL_LIB_DIR lib)
 set(INSTALL_INCLUDE_DIR include/tnr)
 set(INSTALL_CMAKE_DIR lib/cmake/tnr)
 
-set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external)
+find_package(jsoncpp REQUIRED)
 
-include_directories(src
-  ${EXTERNAL_DIR}/jsoncpp/include)
+set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external)
 
 SET(BUILD_STATIC_LIBS ON)
 SET(JSONCPP_WITH_TESTS OFF)
 SET(JSONCPP_WITH_CMAKE_PACKAGE ON)
 
-
-add_subdirectory(${EXTERNAL_DIR}/jsoncpp)
 add_subdirectory(${EXTERNAL_DIR}/gflags)
 add_subdirectory(src)
 
